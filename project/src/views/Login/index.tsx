@@ -1,22 +1,32 @@
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox ,message} from 'antd';
 import {WrappedFormUtils} from 'antd/lib/form/Form'
 import * as React from 'react'
 import '../../asscpt/login/index.css'
+import {inject,observer} from 'mobx-react'
 
 /**
  * 定义history的值的类型
  */
 interface PropsInfo {
     form:WrappedFormUtils,
-    history: any
+    history: any,
+    user:any
 }
-
+@inject('user')
+// observer 函数/装饰器可以用来将 React 组件转变成响应式组件
+@observer
 class Login extends React.Component<PropsInfo> {
     handleSubmit = (e:React.FormEvent) => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
+        this.props.form.validateFields(async (err, values) => {
           if (!err) {
-            console.log('Received values of form: ', values);
+            let result = await this.props.user.login(values)
+            if(result.code===1){
+                message.success(result.msg);
+                this.props.history.push('/main')
+            }else{
+                message.error(result.msg);
+            }
           }
         });
       };

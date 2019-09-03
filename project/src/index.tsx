@@ -12,11 +12,16 @@ import 'antd/dist/antd.css';
 
 // 引入全局样式
 import './index.css';
+import store from './store/index'
+import { Provider } from 'mobx-react'
 
 ReactDOM.render(
-	<BrowserRouter>
-		<RouterView routes={routes.routes} />
-	</BrowserRouter>,
+	<Provider {...store}>
+		<BrowserRouter>
+			<RouterView routes={routes.routes} />
+		</BrowserRouter>
+	</Provider>
+	,
 	document.getElementById('root') as HTMLElement
 );
 

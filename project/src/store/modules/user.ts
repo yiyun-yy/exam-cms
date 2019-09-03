@@ -11,7 +11,7 @@ class User {
 
 	@action async login(form: LoginInfo): Promise<any> {
 		let result: any = await getUserLogin(form);
-		console.log(result);
+        return result
 	}
 }
 

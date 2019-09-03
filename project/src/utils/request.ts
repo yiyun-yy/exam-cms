@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'https:localhost:7001',
+    baseURL: 'http://127.0.0.1:7001',
     timeout: 1000,
-    headers: { 'X-Custom-Header': 'foobar' }
+    // headers: { 'X-Custom-Header': 'foobar' }
 });
 
 
@@ -19,7 +19,7 @@ instance.interceptors.request.use( (config)=> {
 // Add a response interceptor
 instance.interceptors.response.use( (response)=> {
     // Do something with response data
-    return response;
+    return response.data;
 },  (error)=> {
     // Do something with response error
     return Promise.reject(error);
