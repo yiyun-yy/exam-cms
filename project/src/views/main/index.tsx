@@ -62,10 +62,12 @@ class Main extends React.Component {
                 <SubMenu
                   key="sub3"
                   title={
+                    <NavLink to="/main/examManagement">
                     <span>
                       <Icon type="notification" />
                       考试管理
                     </span>
+                    </NavLink>
                   }
                 >
                   <Menu.Item key="9">添加考试</Menu.Item>
@@ -74,10 +76,12 @@ class Main extends React.Component {
                 <SubMenu
                   key="sub4"
                   title={
+                    <NavLink to="/main/classManagement">
                     <span>
                       <Icon type="cloud-o" />
                       班级管理
                     </span>
+                    </NavLink>
                   }
                 >
                   <Menu.Item key="11">班级管理</Menu.Item>
@@ -87,10 +91,12 @@ class Main extends React.Component {
                 <SubMenu
                   key="sub5"
                   title={
+                    <NavLink to="/main/markManagement">
                     <span>
                       <Icon type="appstore-o" />
                       阅卷管理
                     </span>
+                    </NavLink>
                   }
                 >
                   <Menu.Item key="14">待批班级</Menu.Item>

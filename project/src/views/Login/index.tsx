@@ -20,7 +20,7 @@ class Login extends React.Component<PropsInfo> {
         e.preventDefault();
         this.props.form.validateFields(async (err, values) => {
           if (!err) {
-            let result = await this.props.user.login(values)
+            const result = await this.props.user.login(values)
             if(result.code===1){
                 message.success(result.msg);
                 this.props.history.push('/main')

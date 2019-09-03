@@ -10,7 +10,7 @@ class User {
 	@observable isLogin: boolean = false;
 
 	@action async login(form: LoginInfo): Promise<any> {
-		let result: any = await getUserLogin(form);
+		const result: any = await getUserLogin(form);
         return result
 	}
 }

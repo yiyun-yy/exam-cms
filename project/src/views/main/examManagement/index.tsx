@@ -3,7 +3,7 @@ import * as React from 'react'
 class ExamManagement extends React.Component{
     public render(){
         return <div>
-            banjiguanli
+            考试管理
         </div>
     }
 }
