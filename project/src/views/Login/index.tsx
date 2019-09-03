@@ -4,12 +4,6 @@ import '../../asscpt/login/index.css'
 import { getUserLogin } from '../../service/index'
 
 class Login extends React.Component {
-    // constructor(props){
-    //     super(props)
-    //     this.state={
-            
-    //     }
-    // }
     public state = {
         password: '',
         username: ''
@@ -31,12 +25,18 @@ class Login extends React.Component {
             </div>
         )
     }
+    /**
+     * 设置change事件,获取到对应的state的值进行传递
+     */
     public handChange = (e) => {
         const { name, value } = e.target;
         this.setState({
             [name]: value
         })
     }
+    /**
+     * 点击登录时,进项发起axios的请求,并把对应的数据进行传递
+     */
     public submit = () => {
         const params ={
             user_name:this.state.username,

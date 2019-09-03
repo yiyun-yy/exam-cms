@@ -18,6 +18,7 @@ cnpm i || yarn install
     ],
     "only-arrow-functions": [
       false
-    ]
+    ],
+    defaultServerity:none,//可以不按照顺序排序
   },
 ```
