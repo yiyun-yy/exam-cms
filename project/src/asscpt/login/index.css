@@ -3,9 +3,24 @@
     padding: 0;
     list-style: none;
 }
-
+#root,.App{
+    width: 100%;
+    height: 100%;
+}
 .login{
     width: 100%;
+    height: 100%;
+    background-image: url('https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3297037131,72453196&fm=26&gp=0.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.login-login{
+    width: 50%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-left: -25%;
+    margin-top: -25%;
 }
 .login-item{
     width: 50%;

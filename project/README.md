@@ -12,7 +12,7 @@ cnpm i || yarn install
 ##  tslint配置
 ```js
     //用于console.Log的配置
-    "rules": {
+  "rules": {
     "no-console": [
       false
     ],
@@ -20,5 +20,11 @@ cnpm i || yarn install
       false
     ],
     defaultServerity:none,//可以不按照顺序排序
+    "no-empty":true,//不允许空的块
+    "ordered-imports":false //引入多个对象至模块时不用按顺序排序
   },
+```
+## tsconfigjson配置
+```js
+"noImplicitAny": false 
 ```

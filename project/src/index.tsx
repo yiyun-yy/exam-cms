@@ -1,11 +1,15 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+
+//引入路由配置
+import RouterView from './router/RouterView';
+import routes from './router/routes';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
+	<BrowserRouter>
+		<RouterView routes={routes} />
+	</BrowserRouter>,
+	document.getElementById('root') as HTMLElement
 );
-registerServiceWorker();

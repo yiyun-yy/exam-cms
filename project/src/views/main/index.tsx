@@ -1,26 +1,25 @@
-import {  Icon, Layout, Menu} from 'antd';
+import { Icon, Layout, Menu } from 'antd';
 import * as React from 'react'
+import { NavLink } from 'react-router-dom'
 
 
-const { Content,Header,  Sider } = Layout;
+const { Content, Header, Sider } = Layout;
 const { SubMenu } = Menu;
 
 class Main extends React.Component {
-   public render() {
-      return (
-        <Layout>
+  public render() {
+    return (
+      <Layout>
         <Header className="header">
-          <div className="logo" />
+          <div className="logo">
+            <img width='200px' height='60px' src="http://172.16.10.111/exam/resources/images/logoPicture.png" alt="" />
+          </div>
           <Menu
             theme="dark"
             mode="horizontal"
             defaultSelectedKeys={['2']}
             style={{ lineHeight: '64px' }}
-          >
-            <Menu.Item key="1">nav 1</Menu.Item>
-            <Menu.Item key="2">nav 2</Menu.Item>
-            <Menu.Item key="3">nav 3</Menu.Item>
-          </Menu>
+          />
         </Header>
         <Content style={{ padding: '0 50px' }}>
           <Layout style={{ padding: '24px 0', background: '#fff' }}>
@@ -34,10 +33,12 @@ class Main extends React.Component {
                 <SubMenu
                   key="sub1"
                   title={
-                    <span>
-                      <Icon type="user" />
-                      试卷管理
-                    </span>
+                    <NavLink to="/main/management">
+                      <span>
+                        <Icon type="user" />
+                        试卷管理
+                      </span>
+                    </NavLink>
                   }
                 >
                   <Menu.Item key="1">添加试题</Menu.Item>
@@ -47,10 +48,12 @@ class Main extends React.Component {
                 <SubMenu
                   key="sub2"
                   title={
+                    <NavLink to="/main/userManagement">
                     <span>
                       <Icon type="laptop" />
                       用户管理
                     </span>
+                    </NavLink>
                   }
                 >
                   <Menu.Item key="5">添加用户</Menu.Item>
@@ -94,13 +97,13 @@ class Main extends React.Component {
                 </SubMenu>
               </Menu>
             </Sider>
-            <Content style={{ padding: '0 24px', minHeight: 280 }}>123</Content>
+            <Content style={{ padding: '0 24px', minHeight: 280 }}>{this.props.children}</Content>
           </Layout>
         </Content>
       </Layout>
-      )
-    }
+    )
   }
-  
+}
+
 
 export default Main
