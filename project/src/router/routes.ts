@@ -1,36 +1,28 @@
 import Main from '../views/main'
 import Login from '../views/Login'
-import Management from '../views/main/management'
-import ExamManagement from '../views/main/examManagement'
-import ClassManagement from '../views/main/classManagement'
-import MarkManagement from '../views/main/markManagement'
-import UserManagement from '../views/main/userManagement'
+import AddList from '../views/main/addList'
+import CheckTextQuestion from '../views/main/checkTextQuestion'
+import TextQuestion from '../views/main/textQuestion'
+
 
 export default {
     routes: [
         {
             children: [
                 {
-                    component: Management,
-                    path: '/main/management'
+                    component: AddList,
+                    path: '/main/addlist'
                 }, {
-                    component: MarkManagement,
-                    path: '/main/markManagement'
+                    component: CheckTextQuestion,
+                    path: '/main/checkTextQuestion'
     
                 }, {
-                    component: ClassManagement,
-                    path: '/main/classManagement'
+                    component: TextQuestion,
+                    path: '/main/textQuestion'
     
-                }, {
-                    component: ExamManagement,
-                    path: '/main/examManagement'
-    
-                }, {
-                    component: UserManagement,
-                    path: '/main/userManagement'
                 }, {
                     from: '/main',
-                    to: '/main/management'
+                    to: '/main/addlist'
                 }
             ],
             component: Main,
