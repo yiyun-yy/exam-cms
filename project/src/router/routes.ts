@@ -1,36 +1,36 @@
-import Main from '../views/main'
 import Login from '../views/Login'
 import AddList from '../views/main/addList'
 import CheckTextQuestion from '../views/main/checkTextQuestion'
 import TextQuestion from '../views/main/textQuestion'
+import HomePage from 'src/views/main/home';
 
 
 export default {
     routes: [
         {
+            component: Login,
+            path: '/login'
+        },
+        {
             children: [
                 {
                     component: AddList,
-                    path: '/main/addlist'
+                    path: '/home/addlist'
                 }, {
                     component: CheckTextQuestion,
-                    path: '/main/checkTextQuestion'
+                    path: '/home/checkTextQuestion'
     
                 }, {
                     component: TextQuestion,
-                    path: '/main/textQuestion'
+                    path: '/home/textQuestion'
     
                 }, {
-                    from: '/main',
-                    to: '/main/addlist'
+                    from: '/home',
+                    to: '/home/addlist'
                 }
             ],
-            component: Main,
-            path: '/main'
-        },
-        {
-            component: Login,
-            path: '/login'
+            component:HomePage,
+            path:'/home'
         },
         {
             from: '/',
